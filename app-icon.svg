@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3c42"/>
+      <stop offset="1" stop-color="#141518"/>
+    </linearGradient>
+    <linearGradient id="ring" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#7d828b"/>
+      <stop offset="0.5" stop-color="#3b3e44"/>
+      <stop offset="1" stop-color="#1c1d21"/>
+    </linearGradient>
+    <radialGradient id="glass" cx="0.4" cy="0.35" r="0.75">
+      <stop offset="0" stop-color="#5aa2ff"/>
+      <stop offset="0.45" stop-color="#1f5fc4"/>
+      <stop offset="1" stop-color="#081a3a"/>
+    </radialGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Body: Apple's icon grid, 824 square with rounded corners, centred. -->
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#body)"/>
+  <rect x="101.5" y="101.5" width="821" height="821" rx="183.5" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-width="3"/>
+
+  <!-- Lens barrel -->
+  <circle cx="512" cy="512" r="336" fill="url(#ring)"/>
+  <circle cx="512" cy="512" r="304" fill="#0b0c0e"/>
+  <circle cx="512" cy="512" r="284" fill="none" stroke="#3d8bfd" stroke-width="6" stroke-opacity="0.85"/>
+
+  <!-- Aperture -->
+  <path d="M604.7,536.8 L536.8,604.7 L444.1,579.9 L419.3,487.2 L487.2,419.3 L579.9,444.1 Z" fill="url(#glass)"/>
+    <path d="M604.7,536.8 L536.8,604.7 L395.1,746.5 L405.4,751.4 L416.0,755.8 L426.7,759.7 L437.6,763.2 L448.6,766.2 L459.8,768.7 L471.0,770.8 L482.3,772.3 L493.7,773.4 L505.1,773.9 L516.6,774.0 L528.0,773.5 L539.4,772.6 L550.7,771.1 L562.0,769.2 L573.2,766.8 L584.2,763.8 L595.1,760.5 L605.9,756.6 L616.5,752.3 L626.9,747.5 L637.0,742.2 L646.9,736.6 L656.6,730.5 Z" fill="#2f333b" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M536.8,604.7 L444.1,579.9 L250.5,528.0 L251.4,539.4 L252.9,550.7 L254.8,562.0 L257.2,573.2 L260.2,584.2 L263.5,595.1 L267.4,605.9 L271.7,616.5 L276.5,626.9 L281.8,637.0 L287.4,646.9 L293.5,656.6 L300.0,666.0 L307.0,675.1 L314.3,683.9 L322.0,692.4 L330.0,700.5 L338.4,708.2 L347.1,715.6 L356.2,722.6 L365.5,729.2 L375.1,735.4 L385.0,741.2 L395.1,746.5 Z" fill="#3a3f48" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M444.1,579.9 L419.3,487.2 L367.4,293.5 L358.0,300.0 L348.9,307.0 L340.1,314.3 L331.6,322.0 L323.5,330.0 L315.8,338.4 L308.4,347.1 L301.4,356.2 L294.8,365.5 L288.6,375.1 L282.8,385.0 L277.5,395.1 L272.6,405.4 L268.2,416.0 L264.3,426.7 L260.8,437.6 L257.8,448.6 L255.3,459.8 L253.2,471.0 L251.7,482.3 L250.6,493.7 L250.1,505.1 L250.0,516.6 L250.5,528.0 Z" fill="#343841" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M419.3,487.2 L487.2,419.3 L628.9,277.5 L618.6,272.6 L608.0,268.2 L597.3,264.3 L586.4,260.8 L575.4,257.8 L564.2,255.3 L553.0,253.2 L541.7,251.7 L530.3,250.6 L518.9,250.1 L507.4,250.0 L496.0,250.5 L484.6,251.4 L473.3,252.9 L462.0,254.8 L450.8,257.2 L439.8,260.2 L428.9,263.5 L418.1,267.4 L407.5,271.7 L397.1,276.5 L387.0,281.8 L377.1,287.4 L367.4,293.5 Z" fill="#2b2f36" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M487.2,419.3 L579.9,444.1 L773.5,496.0 L772.6,484.6 L771.1,473.3 L769.2,462.0 L766.8,450.8 L763.8,439.8 L760.5,428.9 L756.6,418.1 L752.3,407.5 L747.5,397.1 L742.2,387.0 L736.6,377.1 L730.5,367.4 L724.0,358.0 L717.0,348.9 L709.7,340.1 L702.0,331.6 L694.0,323.5 L685.6,315.8 L676.9,308.4 L667.8,301.4 L658.5,294.8 L648.9,288.6 L639.0,282.8 L628.9,277.5 Z" fill="#383c45" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M579.9,444.1 L604.7,536.8 L656.6,730.5 L666.0,724.0 L675.1,717.0 L683.9,709.7 L692.4,702.0 L700.5,694.0 L708.2,685.6 L715.6,676.9 L722.6,667.8 L729.2,658.5 L735.4,648.9 L741.2,639.0 L746.5,628.9 L751.4,618.6 L755.8,608.0 L759.7,597.3 L763.2,586.4 L766.2,575.4 L768.7,564.2 L770.8,553.0 L772.3,541.7 L773.4,530.3 L773.9,518.9 L774.0,507.4 L773.5,496.0 Z" fill="#30343c" stroke="#0c0d10" stroke-width="5" stroke-linejoin="round"/>
+
+  <!-- Glass reflection over the top of the lens -->
+  <ellipse cx="455" cy="350" rx="190" ry="95" transform="rotate(-25 455 350)" fill="url(#shine)"/>
+</svg>
