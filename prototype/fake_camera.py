@@ -30,7 +30,8 @@ PAGE = 50
 CHUNK = 32 * 1024
 # Longest side in pixels for each smaller copy. LRG roughly matches the A7 III's 2M copy.
 SIZES = {"TN": 160, "SM": 640, "LRG": 1616}
-DATE_FOLDER = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+# The A7 III doesn't always zero-pad its folder names ("2026-11-2"), so allow one or two digits.
+DATE_FOLDER = re.compile(r"^(\d{4})-(\d{1,2})-(\d{1,2})$")
 
 DIDL_OPEN = ('<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" '
              'xmlns:dc="http://purl.org/dc/elements/1.1/" '
@@ -71,8 +72,13 @@ def load_photos(root):
             folder = parent if DATE_FOLDER.match(parent) else taken[:10]
             folders.setdefault(folder, []).append((name, path, taken))
 
+    def by_date(folder):
+        match = DATE_FOLDER.match(folder)
+        return tuple(int(part) for part in match.groups()) if match else (0, 0, 0)
+
     photos, grouped = [], {}
-    for folder in sorted(folders):
+    # By date rather than by name, so "2026-11-2" comes before "2026-11-10".
+    for folder in sorted(folders, key=by_date):
         grouped[folder] = []
         for name, path, taken in sorted(folders[folder]):
             photo = Photo(len(photos) + 1, path, name, taken)

@@ -111,10 +111,12 @@ export function imageUrl(sessionId: number, size: "tn" | "lrg" | "org", index: n
   return navigator.userAgent.includes("Windows") ? `http://camera.localhost/${path}` : `camera://localhost/${path}`;
 }
 
-/** "2026-10-24" or "2026-10-24T11:37:11" → "Saturday 24 October 2026"; anything else as-is. */
+/** "2026-10-24", "2026-11-2" or "2026-10-24T11:37:11" → "Saturday 24 October 2026"; anything
+ *  else as-is. The camera doesn't always zero-pad: an A7 III named a folder "2026-11-2". */
 export function formatDay(text: string): string {
-  const day = new Date(`${text.slice(0, 10)}T12:00:00`);
-  if (Number.isNaN(day.getTime())) return text || "Unknown date";
+  const match = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if (!match) return text || "Unknown date";
+  const day = new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
   return day.toLocaleDateString(undefined, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
 }
 
